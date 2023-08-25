@@ -1,6 +1,7 @@
 import os
 import sys
 import uuid
+import subprocess
 
 from elasticsearch7 import Elasticsearch
 from configparser import ConfigParser
@@ -54,4 +55,4 @@ with open(log_file, "w", encoding='utf-8') as f:
     f.writelines(messages)
 
 #  notepad open messages.txt
-os.system("atom {}".format(log_file))
+subprocess.run(f"atom {log_file}", shell=True)
